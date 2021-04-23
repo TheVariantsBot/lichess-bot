@@ -33,7 +33,7 @@ class Conversation:
                 challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
                 self.send_reply(line, "Challenge queue: {}".format(challengers))
             else:
-                self.send_reply(line, "No challenges queued 💗")
+                self.send_reply(line, "Nothing! :D")
 
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
