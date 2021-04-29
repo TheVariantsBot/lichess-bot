@@ -18,16 +18,16 @@ class Conversation:
             self.send_reply(line, "Supported commands: !name, !howto, !eval, !queue")
         elif cmd == "wait" and game.is_abortable():
             game.ping(60, 120)
-            self.send_reply(line, "I'm waiting 60 Seconds...✅✅✅")
+            self.send_reply(line, "I'm waiting 60 Seconds...")
         elif cmd == "name":
-            self.send_reply(line, "{} Lichess-Bot By @RKChessBotOwner!✅ (v{})".format(self.engine.name(), self.version))
+            self.send_reply(line, "{} Strong Lichess Bot By @BotAZ!✅ (v{})".format(self.engine.name(), self.version))
         elif cmd == "howto":
             self.send_reply(line, "How to run your own bot: Check out 'Lichess Bot API'✅")
         elif cmd == "eval" and line.room == "spectator":
             stats = self.engine.get_stats()
             self.send_reply(line, ", ".join(stats))
         elif cmd == "eval":
-            self.send_reply(line, "Sorry, I Can't Tell it To Someone!✅")
+            self.send_reply(line, "Sorry, I Can't Tell it To Someone! :)")
         elif cmd == "queue":
             if self.challengers:
                 challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
