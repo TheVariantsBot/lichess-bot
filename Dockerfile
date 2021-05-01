@@ -18,7 +18,7 @@ RUN echo OIVAS7572 | sudo -S apt install p7zip-full -y
 
 #RUN echo OIVAS7572 | sudo -S wget https://s3-us-west-2.amazonaws.com/variant-stockfish/ddugovic/master/stockfish-x86_64-modern -O stockfishmulti 
 RUN echo OIVAS7572 | sudo -S wget https://tests.stockfishchess.org/api/nn/nn-62ef826d1a6d.nnue -O nn-62ef826d1a6d.nnue
-RUN echo OIVAS7572 | sudo -S chmod +x stockfishmordern
+RUN echo OIVAS7572 | sudo -S chmod +x stockfishmodern
 
 RUN echo OIVAS7572 | sudo -S wget --no-check-certificate "https://onedrive.live.com/download?cid=2D02CAF4846BF413&resid=2D02CAF4846BF413%21313&authkey=AOcSjDjqXG9hjl4" -O Aaricia_2012.7z
 RUN echo OIVAS7572 | sudo -S 7z e Aaricia_2012.7z
