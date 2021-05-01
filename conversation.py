@@ -1,5 +1,5 @@
 class Conversation:
-    def __init__(self, game, engine, xhr, version, challenge_queue,):
+    def __init__(self, game, engine, xhr, version, challenge_queue):
         self.game = game
         self.engine = engine
         self.xhr = xhr
@@ -18,27 +18,27 @@ class Conversation:
             self.send_reply(line, "Supported commands: !name, !howto, !eval, !queue")
         elif cmd == "wait" and game.is_abortable():
             game.ping(60, 120)
-            self.send_reply(line, "I'm waiting 60 Seconds...")
+            self.send_reply(line, "Waiting 60 seconds...")
         elif cmd == "name":
-                self.send_reply(line, "{} Strong Lichess Bot By @TheFastestMan! (v{})".format(self.engine.name(), self.version))
+            self.send_reply(line, "{} Strong Lichess Bot By @TheFastestMan! :D(v{})".format(self.engine.name(), self.version))
         elif cmd == "howto":
-            self.send_reply(line, "How to run your own bot: Check out 'Lichess Bot API'")
+            self.send_reply(line, "Check Out Your 'Lichess-Bot API'")
         elif cmd == "eval" and line.room == "spectator":
             stats = self.engine.get_stats()
             self.send_reply(line, ", ".join(stats))
         elif cmd == "eval":
-            self.send_reply(line, "Sorry, I Can't Tell it To Someone! :)")
+            self.send_reply(line, "Nah, Man! :) I'm Sorry! :)")
         elif cmd == "queue":
             if self.challengers:
                 challengers = ", ".join(["@" + challenger.challenger_name for challenger in reversed(self.challengers)])
                 self.send_reply(line, "Challenge queue: {}".format(challengers))
             else:
-                self.send_reply(line, "Nothing! :D")
+                self.send_reply(line, "No challenges queued.")
 
     def send_reply(self, line, reply):
         self.xhr.chat(self.game.id, line.room, reply)
-        
-       
+
+
 class ChatLine:
     def __init__(self, json):
         self.room = json.get("room")
