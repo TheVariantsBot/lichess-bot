@@ -26,6 +26,8 @@ engine:                      # engine settings
     Move Overhead: 100        # increase if your bot flags games too often
     Threads: 4                # max CPU threads the engine can use
     Hash: 256                 # max memory (in megabytes) the engine can allocate
+    EvalFile: nn-62ef826d1a6d.nnue # nnue evaluation file name here
+    Use NNUE: true           # To Enable NNUE EVAL
 #   Clear Hash: true          # Clear the hash table
 #   go_commands:              # additional options to pass to the UCI go command
 #     nodes: 1                # Search so many nodes only.
@@ -56,21 +58,21 @@ challenge:                    # incoming challenges
   min_base: 0                 # minimum amount of base time to accept a challenge
   variants:                   # chess variants to accept (http://lichess.org/variant)
     - standard
-    - fromPosition
-    - antichess
-    - atomic
+#    - fromPosition
+#    - antichess
+#    - atomic
     - chess960
-    - crazyhouse
-    - horde
-    - kingOfTheHill
-    - racingKings
-    - threeCheck
+#    - crazyhouse
+#    - horde
+#    - kingOfTheHill
+#    - racingKings
+#    - threeCheck
   time_controls:              # time controls to accept
     - bullet
     - blitz
     - rapid
     - classical
-    - correspondence
+#    - correspondence
   modes:                      # game modes to accept
     - casual                  # unrated games
     - rated                   # rated games - must comment if the engine doesn't try to win
