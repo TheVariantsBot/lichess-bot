@@ -15,16 +15,10 @@ class Conversation:
 
     def command(self, line, game, cmd):
         if cmd == "commands" or cmd == "help":
-            self.send_reply(line, "Supported commands: !hi, !hello, !team, !name, !howto, !eval, !queue")
+            self.send_reply(line, "Supported commands: !name, !howto, !eval, !queue")
         elif cmd == "wait" and game.is_abortable():
             game.ping(60, 120)
             self.send_reply(line, "I'm waiting 60 Seconds...")
-        elif cmd == "hi":
-                self.send_reply(line, "Hello, Dear Friend! The Bot Fully Coded By @TheFastestMan!")
-        elif cmd == "hello":
-                self.send_reply(line, "Hi, Bro! Good, Luck!!")
-        elif cmd == "team":
-                self.send_reply(line, "Twitch Chess Team - https://lichess.org/team/twitch-chess-team ")
         elif cmd == "name":
                 self.send_reply(line, "{} Strong Lichess Bot By @TheFastestMan! (v{})".format(self.engine.name(), self.version))
         elif cmd == "howto":
