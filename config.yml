@@ -26,6 +26,8 @@ engine:                      # engine settings
     Move Overhead: 100        # increase if your bot flags games too often
     Threads: 4                # max CPU threads the engine can use
     Hash: 256                 # max memory (in megabytes) the engine can allocate
+    EvalFile: nn-62ef826d1a6d.nnue # nnue evaluation file name here
+    Use NNUE: true           # To Enable NNUE EVAL
 #   Clear Hash: true          # Clear the hash table
 #   go_commands:              # additional options to pass to the UCI go command
 #     nodes: 1                # Search so many nodes only.
