@@ -1,4 +1,4 @@
-token: "vIBH0YTnBRXIcB8q"           # lichess OAuth2 Token
+token: "ikqNM87CWLNPihv6"           # lichess OAuth2 Token
 url: "https://lichess.org/"  # lichess base URL
 
 engine:                      # engine settings
@@ -24,8 +24,8 @@ engine:                      # engine settings
 #   cpuct: 3.1
   uci_options:                # arbitrary UCI options passed to the engine
     Move Overhead: 100        # increase if your bot flags games too often
-    Threads: 7                # max CPU threads the engine can use
-    Hash: 300                 # max memory (in megabytes) the engine can allocate
+    Threads: 4                # max CPU threads the engine can use
+    Hash: 256                 # max memory (in megabytes) the engine can allocate
 #   Clear Hash: true          # Clear the hash table
 #   go_commands:              # additional options to pass to the UCI go command
 #     nodes: 1                # Search so many nodes only.
@@ -43,7 +43,7 @@ engine:                      # engine settings
 
 abort_time: 30                # time to abort a game in seconds when there is no activity
 fake_think_time: false        # artificially slow down the bot to pretend like it's thinking
-move_overhead: 3000           # increase if your bot flags games too often
+move_overhead: 2000           # increase if your bot flags games too often
 
 challenge:                    # incoming challenges
   concurrency: 1              # number of games to play simultaneously
@@ -70,7 +70,7 @@ challenge:                    # incoming challenges
     - blitz
     - rapid
     - classical
-#   - correspondence
+    - correspondence
   modes:                      # game modes to accept
     - casual                  # unrated games
     - rated                   # rated games - must comment if the engine doesn't try to win
